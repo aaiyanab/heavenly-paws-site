@@ -1,10 +1,17 @@
 # Heavenly Paws — live site
 
-Seven pages, fully wired (Square, Printify, Formspree, Substack, Luma).
+Ten pages, fully wired (Square, Printify, Formspree, Substack, Luma).
 Static site: no build step. Deploy the contents of this folder as-is.
 
 Pages: index (Pet Club) · services · treats · newsletter ·
-join-online · join-partner · join-madison-free
+join-online · join-partner · join-madison-free ·
+wags · guardian-angels · guardian-thank-you
+
+Everything is wired: donation checkouts (app.js), and both WAGS-page
+forms submit to Formspree form mkodnogy (shared with Pet Club contact),
+tagged via _subject + form_source so you can tell submissions apart.
+In Square, set each donation link's "Redirect to a website after
+checkout" to /guardian-thank-you so donors land on the thank-you page.
 
 Deploy: push this folder to GitHub, import the repo on vercel.com,
 framework preset "Other", no build command. vercel.json enables clean

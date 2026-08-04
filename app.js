@@ -7,12 +7,20 @@
        membership_madison  = Square annual subscription link
        partner_featured    = Square annual subscription link ($149)
        treats              = Square Online treats store
+       donate_once         = Square checkout: "Heavenly Paws Guardian Angel — One-Time Gift"
+                             (donor chooses the amount)
+       donate_monthly      = Square recurring checkout: "Heavenly Paws Monthly Guardian Angel"
+   Every "Make a One-Time Gift" / "Become a Monthly Guardian Angel"
+   button on the WAGS and Guardian Angel pages wires itself to these
+   two links automatically. Until pasted, the buttons stay politely inert.
    ===================================================================== */
 const STORE_URLS = {
   club_merch:         "https://madisonpetclub.printify.me/",         // Printify Pop-Up store URL
   membership_madison: "https://square.link/u/de8PPp6G", // Square subscription checkout link (annual)
   partner_featured:   "https://square.link/u/wZeUevhA",   // Square subscription checkout link ($149 annual)
-  treats:             "https://heavenly-paws-treats.square.site"        // Square Online treats store
+  treats:             "https://heavenly-paws-treats.square.site",        // Square Online treats store
+  donate_once:        "https://square.link/u/apycqaA0",   // Square donation checkout — one-time gift, donor picks amount
+  donate_monthly:     "https://square.link/u/Uu7QJTOU"     // Square donation checkout — recurring monthly gift
 };
 
 
