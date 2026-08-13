@@ -891,3 +891,61 @@ body.theme-wags{
 .wform-grid .full{grid-column:1/-1}
 @media (max-width:720px){.wform-grid{grid-template-columns:1fr}}
 .wform-card .btn{width:100%;justify-content:center;font-size:1.05rem;padding:1em 1.6em}
+
+/* =====================================================================
+   PAWS FOR A PURPOSE page
+   ===================================================================== */
+/* Partner cards (grid accommodates a 3rd partner later) */
+.p4p-partners{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(20px,3vw,32px);max-width:1000px;margin:0 auto}
+.p4p-partner{background:#fff;border:1px solid var(--sand);border-radius:22px;padding:clamp(26px,3.4vw,42px);box-shadow:var(--shadow-sm)}
+.p4p-partner h3{color:var(--connector);font-size:1.45rem;margin-bottom:.3rem}
+.p4p-partner .p4p-tag{font-family:var(--script);color:var(--gold-deep);font-size:1.15rem;margin-bottom:1rem}
+.p4p-partner p{color:#3a424b;font-size:.98rem}
+
+/* Lily journey stepper */
+.p4p-journey{max-width:460px;margin:2.4rem auto 0;text-align:center}
+.p4p-step{background:#fff;border:1.5px solid var(--sand);border-radius:14px;padding:16px 20px;
+  font-weight:800;color:var(--connector);letter-spacing:.04em;font-size:.95rem;box-shadow:var(--shadow-sm)}
+.p4p-step.gold{background:var(--gold);border-color:var(--gold);color:#3a2a12}
+.p4p-arrow{color:var(--gold-deep);margin:.45rem auto;display:block;width:22px;height:22px}
+
+/* Help list */
+.p4p-help{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:.9rem 3rem;max-width:920px;margin:0 auto;padding:0}
+.p4p-help li{list-style:none;position:relative;padding-left:2em;color:#33424B;font-weight:600}
+.p4p-help li::before{content:"";position:absolute;left:0;top:.14em;width:1.25em;height:1.25em;background:var(--gold);
+  -webkit-mask:var(--paw-mask) center/contain no-repeat;mask:var(--paw-mask) center/contain no-repeat}
+
+/* Interest form */
+.p4p-form-card{background:var(--cream-card);border-radius:22px;padding:clamp(28px,4vw,54px);max-width:960px;margin:0 auto}
+.p4p-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 2.2rem}
+.p4p-grid .full{grid-column:1/-1}
+@media (max-width:680px){.p4p-grid{grid-template-columns:1fr}}
+.p4p-checks{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.55rem .9rem;margin:.4rem 0 1.2rem}
+.p4p-checks label{display:flex;align-items:center;gap:.55rem;background:#fff;border:1px solid #d9d2c4;
+  border-radius:10px;padding:.65em .85em;font-weight:600;color:#33424B;font-size:.92rem;cursor:pointer}
+.p4p-checks input{width:17px;height:17px;accent-color:var(--gold-deep);flex:none}
+.p4p-form-card .btn{width:100%;justify-content:center;font-size:1.05rem;padding:1em 1.6em}
+.p4p-success{display:none;background:#fff;border:1.5px solid var(--gold);border-radius:16px;
+  padding:clamp(24px,3.5vw,40px);text-align:center;color:#33424B;font-size:1.05rem;max-width:62ch;margin:0 auto}
+.p4p-success strong{color:var(--connector)}
+
+/* FAQ accordion */
+.p4p-faq{max-width:820px;margin:0 auto}
+.p4p-faq details{background:#fff;border:1px solid var(--sand);border-radius:14px;margin-bottom:.8rem;
+  box-shadow:var(--shadow-sm);overflow:hidden}
+.p4p-faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;
+  gap:1rem;padding:1.05em 1.3em;font-weight:800;color:var(--connector);font-size:1rem}
+.p4p-faq summary::-webkit-details-marker{display:none}
+.p4p-faq summary::after{content:"+";font-size:1.5rem;font-weight:600;color:var(--gold-deep);line-height:1;flex:none}
+.p4p-faq details[open] summary::after{content:"\2212"}
+.p4p-faq details p{padding:0 1.3em 1.2em;color:#3a424b;font-size:.97rem}
+
+/* Footer initiative disclaimer */
+.p4p-disclaimer{color:#9fb0bd;font-size:.85rem;max-width:78ch;margin:0 auto 1.6rem;text-align:center;line-height:1.6}
+
+/* P4P photo pairs (partner cards + Lily) */
+.p4p-photos{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:1.5rem}
+.p4p-photos img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:14px;display:block}
+.p4p-photos.lily{max-width:760px;margin:0 auto 2.4rem;gap:clamp(12px,2vw,20px)}
+.p4p-photos.lily img{border-radius:18px;box-shadow:var(--shadow-sm)}
+@media (max-width:480px){.p4p-photos.lily{grid-template-columns:1fr}}

@@ -5,7 +5,7 @@ Static site: no build step. Deploy the contents of this folder as-is.
 
 Pages: index (Pet Club) · services · treats · newsletter ·
 join-online · join-partner · join-madison-free ·
-wags · guardian-angels · guardian-thank-you
+wags · guardian-angels · guardian-thank-you · paws-for-a-purpose
 
 Everything is wired: donation checkouts (app.js), and both WAGS-page
 forms submit to Formspree form mkodnogy (shared with Pet Club contact),
