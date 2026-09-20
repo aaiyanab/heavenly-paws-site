@@ -949,3 +949,9 @@ body.theme-wags{
 .p4p-photos.lily{max-width:760px;margin:0 auto 2.4rem;gap:clamp(12px,2vw,20px)}
 .p4p-photos.lily img{border-radius:18px;box-shadow:var(--shadow-sm)}
 @media (max-width:480px){.p4p-photos.lily{grid-template-columns:1fr}}
+
+/* Homepage hero buttons: 2-column grid on phones instead of a tall stack */
+@media(max-width:720px){
+  .hero-photo .hero-cta{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;max-width:430px;margin-left:auto;margin-right:auto}
+  .hero-photo .hero-cta .btn{width:100%;justify-content:center;padding:.9em .4em;font-size:.8rem}
+}
