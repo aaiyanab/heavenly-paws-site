@@ -3,12 +3,298 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Become a Paw Partner — Free | Heavenly Paws Pet Club</title>
-<meta name="description" content="Join the Paw Partner Network free: official recognition, a certificate, and a window decal for businesses that support local pets and their people.">
+<title>Become a Paw Partner — Free & Featured | Heavenly Paws Pet Club</title>
+<meta name="description" content="Join the PAW Partner Network — free or featured — and connect your business to a community of pet lovers in Madison County and beyond.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Kaushan+Script&family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<style>
+/* ── PAW Partner page extras ── */
+.partner-intro {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: clamp(32px,4vw,48px) 20px 0;
+  text-align: center;
+}
+.partner-intro p {
+  font-size: clamp(.97rem,1.4vw,1.08rem);
+  color: #4a5568;
+  line-height: 1.8;
+  margin-bottom: .75rem;
+}
+
+/* ── Partner cards ── */
+.partner-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: clamp(32px,4vw,52px) 20px clamp(48px,6vw,80px);
+}
+
+/* Featured card (larger, featured feel) */
+.partner-featured {
+  background: #fff;
+  border: 2px solid var(--accent, #C69A6B);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 6px 36px rgba(15,47,74,.13);
+}
+.partner-featured-header {
+  background: var(--connector, #0F2F4A);
+  color: #fff;
+  padding: 26px 40px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.partner-featured-header h2 {
+  font-family: var(--serif,'Cinzel',serif);
+  font-size: clamp(1.2rem,2vw,1.6rem);
+  color: #fff;
+  margin: 0;
+}
+.featured-badge {
+  background: var(--gold, #C69A6B);
+  color: #fff;
+  font-family: var(--sans,'Raleway',sans-serif);
+  font-weight: 700;
+  font-size: .8rem;
+  letter-spacing: .08em;
+  padding: 5px 14px;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+.partner-featured-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+.featured-info {
+  padding: 36px 40px;
+  border-right: 1px solid rgba(198,154,107,.25);
+}
+.featured-info p {
+  font-size: .97rem;
+  line-height: 1.8;
+  color: #4a5568;
+  margin-bottom: 1.2rem;
+}
+.featured-info p em {
+  color: var(--connector, #0F2F4A);
+  font-style: normal;
+  font-weight: 700;
+}
+.featured-info .fine-print {
+  font-size: .83rem;
+  color: #7a8898;
+  margin-top: .5rem;
+}
+.featured-form {
+  padding: 36px 40px;
+  background: #fafaf8;
+}
+.featured-form h3 {
+  font-family: var(--serif,'Cinzel',serif);
+  font-size: 1.15rem;
+  color: var(--connector, #0F2F4A);
+  margin-bottom: 1.4rem;
+}
+
+/* Free card */
+.partner-free {
+  background: #fff;
+  border: 1px solid rgba(198,154,107,.3);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(15,47,74,.08);
+}
+.partner-free-header {
+  background: var(--sand, #F0E9DD);
+  padding: 22px 40px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.partner-free-header h2 {
+  font-family: var(--serif,'Cinzel',serif);
+  font-size: clamp(1.1rem,1.8vw,1.45rem);
+  color: var(--connector, #0F2F4A);
+  margin: 0;
+}
+.free-badge {
+  background: var(--connector, #0F2F4A);
+  color: #fff;
+  font-family: var(--sans,'Raleway',sans-serif);
+  font-weight: 700;
+  font-size: .8rem;
+  letter-spacing: .08em;
+  padding: 5px 14px;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+.partner-free-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+.free-info {
+  padding: 32px 36px;
+  border-right: 1px solid rgba(198,154,107,.2);
+}
+.free-info p {
+  font-size: .97rem;
+  line-height: 1.8;
+  color: #4a5568;
+  margin-bottom: 1.2rem;
+}
+.free-info .fine-print {
+  font-size: .83rem;
+  color: #7a8898;
+  margin-top: .5rem;
+}
+.free-form {
+  padding: 32px 36px;
+  background: #fafaf8;
+}
+.free-form h3 {
+  font-family: var(--serif,'Cinzel',serif);
+  font-size: 1.1rem;
+  color: var(--connector, #0F2F4A);
+  margin-bottom: 1.4rem;
+}
+
+/* shared form styles */
+.pf .field { margin-bottom: 1rem; }
+.pf .field label {
+  display: block;
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--connector, #0F2F4A);
+  margin-bottom: .35rem;
+}
+.pf .field input,
+.pf .field select,
+.pf .field textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #d8dfe8;
+  border-radius: 10px;
+  font-family: var(--sans,'Raleway',sans-serif);
+  font-size: .94rem;
+  color: #1a2533;
+  background: #fff;
+  transition: border-color .18s;
+  box-sizing: border-box;
+}
+.pf .field input:focus,
+.pf .field select:focus,
+.pf .field textarea:focus {
+  outline: none;
+  border-color: var(--accent, #C69A6B);
+}
+.pf .field textarea { min-height: 90px; resize: vertical; }
+.pf .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+/* category checkboxes */
+.cat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 16px;
+  margin-top: .4rem;
+}
+.cat-grid label {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: .88rem;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  color: #3a4a5a !important;
+  cursor: pointer;
+  line-height: 1.4;
+}
+.cat-grid input[type="checkbox"] {
+  width: auto;
+  margin-top: 2px;
+  accent-color: var(--accent, #C69A6B);
+  flex-shrink: 0;
+}
+.cat-section-label {
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--connector, #0F2F4A);
+  margin: 1.2rem 0 .4rem;
+  display: block;
+}
+.radio-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: .4rem;
+}
+.radio-row label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: .9rem;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  color: #3a4a5a !important;
+  cursor: pointer;
+}
+.radio-row input[type="radio"] {
+  width: auto;
+  accent-color: var(--accent, #C69A6B);
+}
+.pet-club-opt {
+  background: rgba(198,154,107,.08);
+  border: 1px dashed rgba(198,154,107,.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-top: .3rem;
+}
+.pet-club-opt label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: .92rem;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  color: var(--connector, #0F2F4A) !important;
+  cursor: pointer;
+  line-height: 1.5;
+}
+.pet-club-opt input[type="checkbox"] {
+  width: auto;
+  margin-top: 3px;
+  accent-color: var(--gold, #C69A6B);
+  flex-shrink: 0;
+}
+
+@media (max-width: 780px) {
+  .partner-featured-body,
+  .partner-free-body { grid-template-columns: 1fr; }
+  .featured-info, .free-info { border-right: none; border-bottom: 1px solid rgba(198,154,107,.2); }
+  .partner-featured-header, .partner-free-header { padding: 18px 24px; }
+  .featured-info, .featured-form, .free-info, .free-form { padding: 24px; }
+  .cat-grid { grid-template-columns: 1fr; }
+  .field-row { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 <body class="theme-club">
 
@@ -28,77 +314,164 @@
       <li><a href="paws-for-a-purpose.html">Paws for a Purpose</a></li>
       <li><a href="newsletter.html">Newsletter</a></li>
       <li><a href="resource-guide.html">Resource Guide</a></li>
-          </ul>
+    </ul>
   </div>
 </header>
 
 <main>
+
+<!-- ===== HERO ===== -->
 <section class="news-hero">
-  <span class="eyebrow reveal">Paw Partner Network · Free to Join</span>
+  <span class="eyebrow reveal">Paw Partner Network</span>
   <h1 class="reveal">Become a Paw Partner</h1>
   <p class="reveal">For local businesses that support pets, pet owners, and community connection. Sign up free and be recognized — or go Featured for spotlights, promotions, and event opportunities.</p>
 </section>
 
-<section class="band" style="padding-top:clamp(16px,2.5vw,26px)">
-  <div class="wrap">
-    <div class="contact-grid" style="border-radius:22px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--sand)">
-      <div class="contact-left">
-        <div class="lead-line"></div>
-        <h2>Free Partner includes</h2>
-        <p>Every Paw Partner is part of the network linking pets &amp; community.</p>
-        <div class="info-card">
-          <div class="info-row">
-            <div class="lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9 6.8 19.2l1-5.8L3.5 9.2l5.9-.9z"/></svg>Official Recognition</div>
-            <div class="val">Recognized as a business that supports local pets &amp; families</div>
-          </div>
-          <div class="info-row">
-            <div class="lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h5"/><circle cx="16.5" cy="15.5" r="2"/><path d="M15.5 17.5L14 20l2.5-1 2.5 1-1.5-2.5"/></svg>Certificate</div>
-            <div class="val">An official Paw Partner certificate for your business</div>
-          </div>
-          <div class="info-row">
-            <div class="lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M9 17h6"/></svg>Window Decal</div>
-            <div class="val">Show the neighborhood you're pet-people friendly</div>
-          </div>
-          <div class="info-row">
-            <div class="lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l12-5v12L3 13zM15 8a3 3 0 0 1 0 6"/></svg>Shop Paw Partners First</div>
-            <div class="val">We encourage our community to support partner businesses</div>
-          </div>
-        </div>
-        <div style="margin-top:1.8rem;background:#fff;border:2px solid var(--accent);border-radius:16px;padding:22px">
-          <div style="font-family:var(--serif);color:var(--connector);font-size:1.1rem;margin-bottom:.3rem">Want more visibility?</div>
-          <p style="color:#54606a;font-size:.93rem;margin-bottom:1rem">Featured Partners get spotlights, promotions, and event opportunities — <strong>$149/yr founding rate thru December</strong>.</p>
-          <a class="btn accent" data-store="partner_featured">Become a Featured Partner</a>
-        </div>
+<!-- ===== INTRO BLURB ===== -->
+<div class="partner-intro reveal">
+  <p>We created the PAW Partner Network to build connections between our members and local businesses. Our goal is simple: encourage pet owners to shop local with our PAW Partners. Your business does not need to sell pet products or allow pets inside to participate.</p>
+</div>
+
+<!-- ===== PARTNER CARDS ===== -->
+<div class="partner-cards">
+
+  <!-- ─── FEATURED PARTNER ─── -->
+  <div class="partner-featured reveal">
+    <div class="partner-featured-header">
+      <h2>⭐ Featured PAW Partner</h2>
+      <span class="featured-badge">$149 / YEAR — FOUNDING RATE</span>
+    </div>
+    <div class="partner-featured-body">
+      <div class="featured-info">
+        <p>At the founding rate of <em>$149 through December 31, 2026</em>, receive all free benefits plus enhanced visibility, newsletter and social media business spotlights, priority vendor opportunities, and a WAGS Business Celebration. We also distribute your supplied business information and promotions in our WAG Bags.</p>
+        <p>Both partner levels include a PAW Partner Business Guide listing to help members find and support your business. Pet-friendly locations will be identified so members know where their pets are welcome.</p>
+        <p class="fine-print"><em>*Pet Club membership is separate from business partnership.*</em></p>
       </div>
-      <div class="contact-right">
-        <h2>Sign up free</h2>
-        <!-- ★ PASTE YOUR FORMSPREE ID: replace xgogelab with this form's ID -->
-        <form action="https://formspree.io/f/xgogelab" method="POST">
-          <div class="field"><label for="bn">Business name *</label><input id="bn" name="business_name" type="text" placeholder="Your business" required></div>
-          <div class="field"><label for="cn">Contact person *</label><input id="cn" name="contact_name" type="text" placeholder="Who should we talk to?" required></div>
-          <div class="field"><label for="em">Email *</label><input id="em" name="email" type="email" placeholder="you@business.com" required></div>
-          <div class="field"><label for="ph">Phone</label><input id="ph" name="phone" type="tel" placeholder="(601) 000-0000"></div>
-          <div class="field"><label for="ad">Business address</label><input id="ad" name="address" type="text" placeholder="Street, city (for your decal delivery)"></div>
-          <div class="field"><label for="msg">Tell us about your business</label><textarea id="msg" name="about" placeholder="What do you do, and how do you love on the pet community?"></textarea></div>
+      <div class="featured-form">
+        <h3>Sign Up as Featured Partner</h3>
+        <form class="pf" action="https://formspree.io/f/xgogelab" method="POST">
+          <input type="hidden" name="membership" value="Paw Partner — Featured ($149/yr)">
+
+          <div class="field-row">
+            <div class="field"><label for="fp-bn">Business name *</label><input id="fp-bn" name="business_name" type="text" placeholder="Your business" required></div>
+            <div class="field"><label for="fp-cn">Contact person *</label><input id="fp-cn" name="contact_name" type="text" placeholder="Your name" required></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="fp-em">Email *</label><input id="fp-em" name="email" type="email" placeholder="you@business.com" required></div>
+            <div class="field"><label for="fp-ph">Phone</label><input id="fp-ph" name="phone" type="tel" placeholder="(601) 000-0000"></div>
+          </div>
+          <div class="field"><label for="fp-ad">Business address</label><input id="fp-ad" name="address" type="text" placeholder="Street, city (for decal delivery)"></div>
+          <div class="field-row">
+            <div class="field"><label for="fp-web">Website</label><input id="fp-web" name="website" type="url" placeholder="https://yourbusiness.com"></div>
+            <div class="field"><label for="fp-social">Social media</label><input id="fp-social" name="social_media" type="text" placeholder="@yourbusiness or page URL"></div>
+          </div>
+
+          <span class="cat-section-label">Business Category</span>
+          <div class="cat-grid">
+            <label><input type="checkbox" name="category" value="Retail and Shopping"> Retail &amp; Shopping<br><small>Boutiques, gifts, clothing, home décor, specialty stores</small></label>
+            <label><input type="checkbox" name="category" value="Food and Beverage"> Food &amp; Beverage<br><small>Restaurants, cafes, coffee shops, bakeries, catering, food trucks</small></label>
+            <label><input type="checkbox" name="category" value="Home, Trade and Services"> Home, Trade &amp; Services<br><small>Contractors, landscaping, HVAC, plumbing, cleaning, repair</small></label>
+            <label><input type="checkbox" name="category" value="Business, Professional and Tech"> Business, Professional &amp; Tech<br><small>Attorneys, accountants, marketing, printing, IT, consultants</small></label>
+            <label><input type="checkbox" name="category" value="Health, Wellness and Personal Care"> Health, Wellness &amp; Personal Care<br><small>Medical/dental, salons, spa, barbers, wellness businesses</small></label>
+            <label><input type="checkbox" name="category" value="Financial, Real Estate and Insurance"> Financial, Real Estate &amp; Insurance<br><small>Banks, credit unions, Realtors, mortgage, insurance agencies</small></label>
+            <label><input type="checkbox" name="category" value="Arts, Entertainment and Events"> Arts, Entertainment &amp; Events<br><small>Photographers, event venues, creative businesses, party services</small></label>
+            <label><input type="checkbox" name="category" value="Community, Faith, Travel and Hospitality"> Community, Faith, Travel &amp; Hospitality<br><small>Churches, nonprofits, civic groups, hotels, travel, recreation</small></label>
+            <label><input type="checkbox" name="category" value="Other"> Other</label>
+          </div>
+
+          <div class="field" style="margin-top:1.2rem"><label for="fp-desc">Brief description of your business</label><textarea id="fp-desc" name="business_description" placeholder="Tell us about your business and what you offer..."></textarea></div>
+
+          <span class="cat-section-label">Are you a pet owner?</span>
+          <div class="radio-row">
+            <label><input type="radio" name="pet_owner" value="Yes"> Yes</label>
+            <label><input type="radio" name="pet_owner" value="No"> No</label>
+          </div>
+
+          <div class="pet-club-opt" style="margin-top:1.2rem">
+            <label>
+              <input type="checkbox" name="join_pet_club" value="Yes, add me to the Pet Club">
+              <span><strong>Join our Pet Club!</strong><br>Would you like to be added to the Heavenly Paws Pet Club community? (Free)</span>
+            </label>
+          </div>
+
+          <div style="margin-top:1.6rem">
+            <a class="btn accent" data-store="partner_featured" style="display:block;text-align:center;margin-bottom:.8rem">Proceed to Payment — $149/yr →</a>
+            <button class="btn outline" type="submit" style="width:100%;justify-content:center;border-color:var(--accent);color:var(--connector)">Submit My Info First (then pay)</button>
+          </div>
+        </form>
+        <p class="news-note" style="margin-top:1rem">Questions? Email <a href="mailto:madisonpetclub@gmail.com" style="font-weight:700">madisonpetclub@gmail.com</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── FREE PARTNER ─── -->
+  <div class="partner-free reveal">
+    <div class="partner-free-header">
+      <h2>PAW Partner — Free</h2>
+      <span class="free-badge">FREE TO JOIN</span>
+    </div>
+    <div class="partner-free-body">
+      <div class="free-info">
+        <p>Includes an official window decal presentation, partnership certificate, social media recognition, optional event participation, eligibility for Shop PAW Partner First promotions, and the opportunity to become a WAGS Kindness Card pickup location.</p>
+        <p>Both partner levels include a PAW Partner Business Guide listing to help members find and support your business. Pet-friendly locations will be identified so members know where their pets are welcome.</p>
+        <p class="fine-print"><em>*Pet Club membership is separate from business partnership.*</em></p>
+      </div>
+      <div class="free-form">
+        <h3>Sign up free</h3>
+        <form class="pf" action="https://formspree.io/f/xgogelab" method="POST">
           <input type="hidden" name="membership" value="Paw Partner — Free">
-          <button class="btn gold" type="submit" style="width:100%;justify-content:center">Join the Network — Free</button>
+
+          <div class="field-row">
+            <div class="field"><label for="fr-bn">Business name *</label><input id="fr-bn" name="business_name" type="text" placeholder="Your business" required></div>
+            <div class="field"><label for="fr-cn">Contact person *</label><input id="fr-cn" name="contact_name" type="text" placeholder="Your name" required></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="fr-em">Email *</label><input id="fr-em" name="email" type="email" placeholder="you@business.com" required></div>
+            <div class="field"><label for="fr-ph">Phone</label><input id="fr-ph" name="phone" type="tel" placeholder="(601) 000-0000"></div>
+          </div>
+          <div class="field"><label for="fr-ad">Business address</label><input id="fr-ad" name="address" type="text" placeholder="Street, city (for decal delivery)"></div>
+          <div class="field-row">
+            <div class="field"><label for="fr-web">Website</label><input id="fr-web" name="website" type="url" placeholder="https://yourbusiness.com"></div>
+            <div class="field"><label for="fr-social">Social media</label><input id="fr-social" name="social_media" type="text" placeholder="@yourbusiness or page URL"></div>
+          </div>
+
+          <span class="cat-section-label">Business Category</span>
+          <div class="cat-grid">
+            <label><input type="checkbox" name="category" value="Retail and Shopping"> Retail &amp; Shopping<br><small>Boutiques, gifts, clothing, home décor, specialty stores</small></label>
+            <label><input type="checkbox" name="category" value="Food and Beverage"> Food &amp; Beverage<br><small>Restaurants, cafes, coffee shops, bakeries, catering, food trucks</small></label>
+            <label><input type="checkbox" name="category" value="Home, Trade and Services"> Home, Trade &amp; Services<br><small>Contractors, landscaping, HVAC, plumbing, cleaning, repair</small></label>
+            <label><input type="checkbox" name="category" value="Business, Professional and Tech"> Business, Professional &amp; Tech<br><small>Attorneys, accountants, marketing, printing, IT, consultants</small></label>
+            <label><input type="checkbox" name="category" value="Health, Wellness and Personal Care"> Health, Wellness &amp; Personal Care<br><small>Medical/dental, salons, spa, barbers, wellness businesses</small></label>
+            <label><input type="checkbox" name="category" value="Financial, Real Estate and Insurance"> Financial, Real Estate &amp; Insurance<br><small>Banks, credit unions, Realtors, mortgage, insurance agencies</small></label>
+            <label><input type="checkbox" name="category" value="Arts, Entertainment and Events"> Arts, Entertainment &amp; Events<br><small>Photographers, event venues, creative businesses, party services</small></label>
+            <label><input type="checkbox" name="category" value="Community, Faith, Travel and Hospitality"> Community, Faith, Travel &amp; Hospitality<br><small>Churches, nonprofits, civic groups, hotels, travel, recreation</small></label>
+            <label><input type="checkbox" name="category" value="Other"> Other</label>
+          </div>
+
+          <div class="field" style="margin-top:1.2rem"><label for="fr-desc">Brief description of your business</label><textarea id="fr-desc" name="business_description" placeholder="Tell us about your business and what you offer..."></textarea></div>
+
+          <span class="cat-section-label">Are you a pet owner?</span>
+          <div class="radio-row">
+            <label><input type="radio" name="pet_owner" value="Yes"> Yes</label>
+            <label><input type="radio" name="pet_owner" value="No"> No</label>
+          </div>
+
+          <div class="pet-club-opt" style="margin-top:1.2rem">
+            <label>
+              <input type="checkbox" name="join_pet_club" value="Yes, add me to the Pet Club">
+              <span><strong>Join our Pet Club!</strong><br>Would you like to be added to the Heavenly Paws Pet Club community? (Free)</span>
+            </label>
+          </div>
+
+          <button class="btn gold" type="submit" style="width:100%;justify-content:center;margin-top:1.6rem">Join the Network — Free</button>
         </form>
         <p class="news-note" style="margin-top:1.2rem">We'll be in touch with your certificate and window decal. Questions? Email <a href="mailto:madisonpetclub@gmail.com" style="font-weight:700">madisonpetclub@gmail.com</a>.</p>
       </div>
     </div>
   </div>
-</section>
 
-<section class="band tint">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow">One Family</span><h2>Explore Heavenly Paws</h2></div>
-    <div class="family">
-      <a class="fam-card reveal" href="index.html"><img src="assets/petclub_emblem.webp" alt=""><h3>Pet Club</h3><span>Community &amp; events</span></a>
-      <a class="fam-card reveal" href="services.html"><img src="assets/services_emblem.webp" alt=""><h3>Services</h3><span>Care while you're away</span></a>
-      <a class="fam-card reveal" href="treats.html"><img src="assets/treats_emblem.webp" alt=""><h3>Treats</h3><span>Small batch, fresh baked</span></a>
-    </div>
-  </div>
-</section>
+</div><!-- /partner-cards -->
+
 </main>
 
 <footer class="site-foot">
