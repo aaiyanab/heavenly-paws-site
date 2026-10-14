@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heavenly Paws — Choose Your Experience</title>
+<meta name="description" content="Three ways to make life sweeter for you and your furry family. Explore the Heavenly Paws Pet Club, Pet Care Services, and Treats.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Kaushan+Script&family=Great+Vibes&family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* ── Homepage-specific overrides ── */
+.hp-hero {
+  background: var(--connector, #0F2F4A);
+  color: #fff;
+  text-align: center;
+  padding: clamp(56px,8vw,100px) 20px clamp(48px,6vw,80px);
+}
+.hp-hero .eyebrow {
+  font-family: var(--script, 'Great Vibes', cursive);
+  font-size: clamp(1.3rem,2.5vw,1.9rem);
+  color: var(--gold, #C69A6B);
+  display: block;
+  margin-bottom: .6rem;
+}
+.hp-hero h1 {
+  font-family: var(--serif, 'Cinzel', serif);
+  font-size: clamp(1.9rem,4.5vw,3.2rem);
+  color: #fff;
+  margin: 0 0 .8rem;
+  letter-spacing: .01em;
+  line-height: 1.15;
+}
+.hp-hero .tagline {
+  font-family: var(--sans, 'Raleway', sans-serif);
+  font-size: clamp(1rem,1.8vw,1.2rem);
+  color: rgba(255,255,255,.85);
+  max-width: 640px;
+  margin: 0 auto;
+  font-weight: 500;
+  line-height: 1.6;
+}
+.hp-hero .intro-copy {
+  font-size: clamp(.93rem,1.4vw,1.05rem);
+  color: rgba(255,255,255,.75);
+  max-width: 680px;
+  margin: 1.4rem auto 0;
+  line-height: 1.75;
+}
+
+/* ── Experience cards ── */
+.xp-section {
+  background: var(--cream, #F8F4EE);
+  padding: clamp(48px,7vw,90px) 20px clamp(56px,8vw,100px);
+}
+.xp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1100px;
+  margin: clamp(36px,5vw,60px) auto 0;
+}
+.xp-card {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 28px rgba(15,47,74,.10);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(198,154,107,.18);
+  transition: transform .22s, box-shadow .22s;
+}
+.xp-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 40px rgba(15,47,74,.16);
+}
+.xp-card-img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  display: block;
+  background: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.xp-card-img-placeholder {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+}
+.xp-card-body {
+  padding: 28px 28px 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.xp-card-brand {
+  font-family: var(--serif, 'Cinzel', serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  margin-bottom: .5rem;
+}
+.xp-card-tagline {
+  font-family: var(--script, 'Great Vibes', cursive);
+  font-size: 1.25rem;
+  margin-bottom: .8rem;
+  display: block;
+  line-height: 1.3;
+}
+.xp-card-body p {
+  font-size: .95rem;
+  line-height: 1.75;
+  color: #4a5568;
+  flex: 1;
+  margin-bottom: 1.4rem;
+}
+.xp-card .xp-cta {
+  display: inline-block;
+  padding: 13px 24px;
+  border-radius: 50px;
+  font-family: var(--sans, 'Raleway', sans-serif);
+  font-weight: 700;
+  font-size: .93rem;
+  letter-spacing: .04em;
+  text-decoration: none;
+  text-align: center;
+  transition: background .2s, transform .15s;
+}
+.xp-cta:hover { transform: scale(1.03); }
+
+/* Club — gold */
+.xp-card--club .xp-card-brand { color: var(--connector, #0F2F4A); }
+.xp-card--club .xp-card-tagline { color: var(--gold, #C69A6B); }
+.xp-card--club .xp-card-img-placeholder { background: #0F2F4A; }
+.xp-card--club .xp-cta { background: var(--gold, #C69A6B); color: #fff; }
+.xp-card--club .xp-cta:hover { background: #b08555; }
+
+/* Services — sage */
+.xp-card--services .xp-card-brand { color: #3d5045; }
+.xp-card--services .xp-card-tagline { color: #6E785D; }
+.xp-card--services .xp-card-img-placeholder { background: #6E785D; }
+.xp-card--services .xp-cta { background: #6E785D; color: #fff; }
+.xp-card--services .xp-cta:hover { background: #5a6449; }
+
+/* Treats — coral */
+.xp-card--treats .xp-card-brand { color: #8b2e30; }
+.xp-card--treats .xp-card-tagline { color: #E07173; }
+.xp-card--treats .xp-card-img-placeholder { background: #E07173; }
+.xp-card--treats .xp-cta { background: #E07173; color: #fff; }
+.xp-card--treats .xp-cta:hover { background: #c75d5f; }
+
+/* section heading */
+.xp-section .sec-head { text-align: center; }
+.xp-section .sec-head h2 {
+  font-family: var(--serif,'Cinzel',serif);
+  font-size: clamp(1.6rem,3vw,2.4rem);
+  color: var(--connector, #0F2F4A);
+  margin: .3rem 0 .6rem;
+}
+.xp-section .sec-head p {
+  color: #54606a;
+  font-size: clamp(.95rem,1.3vw,1.05rem);
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+
+@media (max-width: 860px) {
+  .xp-grid { grid-template-columns: 1fr 1fr; }
+  .xp-card:last-child { grid-column: 1 / -1; max-width: 480px; justify-self: center; }
+}
+@media (max-width: 560px) {
+  .xp-grid { grid-template-columns: 1fr; }
+  .xp-card:last-child { grid-column: auto; max-width: 100%; }
+}
+</style>
+</head>
+<body class="theme-club">
+
+<header class="site-head">
+  <div class="wrap nav">
+    <a class="brandmark" href="home.html" aria-label="Heavenly Paws home">
+      <svg class="paw" viewBox="0 0 24 24" fill="var(--connector)" aria-hidden="true"><ellipse cx="7" cy="8" rx="2.1" ry="2.9"/><ellipse cx="12" cy="6.4" rx="2.1" ry="3"/><ellipse cx="17" cy="8" rx="2.1" ry="2.9"/><path d="M12 11c-3 0-5.4 2.2-5.4 4.6 0 1.9 1.7 2.8 3.4 2.4 1.3-.3 2.7-.3 4 0 1.7.4 3.4-.5 3.4-2.4C17.4 13.2 15 11 12 11z"/></svg>
+      <span>Heavenly Paws</span>
+    </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Pet Club</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="treats.html">Treats</a></li>
+      <li><a href="wags.html">WAGS</a></li>
+      <li><a href="guardian-angels.html">Guardian Angels</a></li>
+      <li><a href="paws-for-a-purpose.html">Paws for a Purpose</a></li>
+      <li><a href="newsletter.html">Newsletter</a></li>
+      <li><a href="resource-guide.html">Resource Guide</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+
+<!-- ===== HERO ===== -->
+<section class="hp-hero">
+  <span class="eyebrow">Welcome to Heavenly Paws</span>
+  <h1>Choose Your Heavenly Paws Experience</h1>
+  <p class="tagline">Three ways to make life sweeter for you and your furry family.</p>
+  <p class="intro-copy">At Heavenly Paws, we believe caring for pets goes beyond the everyday. It's about building connections, providing loving care, and celebrating the special bond we share with our furry companions.</p>
+</section>
+
+<!-- ===== EXPERIENCE CARDS ===== -->
+<section class="xp-section">
+  <div class="wrap">
+    <div class="sec-head">
+      <p>Explore everything Heavenly Paws has to offer — from community to care to celebration.</p>
+    </div>
+
+    <div class="xp-grid">
+
+      <!-- Pet Club -->
+      <div class="xp-card xp-card--club reveal">
+        <img class="xp-card-img" src="assets/home_club_logo.png" alt="Madison Pet Club logo">
+        <div class="xp-card-body">
+          <div class="xp-card-brand">Madison Pet Club</div>
+          <span class="xp-card-tagline">Where Pet Lovers Become Community.</span>
+          <p>Connect with fellow pet parents, discover pet-friendly experiences, and become part of a community that celebrates the joy of pet ownership. Through local events, educational opportunities, community partnerships, and shared experiences, the Pet Club makes it easier to find your people while creating meaningful memories with your pets.<br><br>From community meetups and dog walks to pet-focused activities and opportunities to support local businesses, there's always something new to discover.<br><br><em>Your pets bring us together. Our community keeps us connected.</em></p>
+          <a class="xp-cta" href="index.html">Join the Pet Club</a>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="xp-card xp-card--services reveal">
+        <img class="xp-card-img" src="assets/home_services_logo.png" alt="Heavenly Paws Pet Care Services logo">
+        <div class="xp-card-body">
+          <div class="xp-card-brand">Heavenly Paws Pet Care Services</div>
+          <span class="xp-card-tagline">Loving Care, Right Where They Feel at Home.</span>
+          <p>Your pets are family, and they deserve care that makes them feel safe, comfortable, and loved. Heavenly Paws Pet Care Services provides personalized in-home care designed to give pets attention and companionship in the comfort of their familiar surroundings.<br><br>Whether you're heading out of town, working through a busy week, or need an extra helping hand, our pet care services help make life easier for you and your furry companions. From vacation pet sitting and overnight care to exercise visits and pet transportation, we're here to help you care for the ones who depend on you.<br><br>Serving Madison, Ridgeland, Gluckstadt, and surrounding Central Mississippi communities.<br><br><em>You take care of life's adventures. We'll help take care of home.</em></p>
+          <a class="xp-cta" href="services.html">Book Your Services</a>
+        </div>
+      </div>
+
+      <!-- Treats -->
+      <div class="xp-card xp-card--treats reveal">
+        <img class="xp-card-img" src="assets/home_treats_logo.png" alt="Heavenly Paws Treats logo">
+        <div class="xp-card-body">
+          <div class="xp-card-brand">Heavenly Paws Treats</div>
+          <span class="xp-card-tagline">Because Every Pet Deserves a Taste of Heaven.</span>
+          <p>Every tail wag deserves a little celebration! Heavenly Paws Treats brings a little extra joy to treat time with homemade dog treats prepared with care. Whether you're rewarding good behavior, celebrating a special occasion, or simply showing your best friend some extra love, our treats make those everyday moments even sweeter.<br><br>Explore our selection of flavorful favorites, made with thoughtfully chosen ingredients and plenty of love. Because the little things — like a happy tail and an excited nose — are often the moments that mean the most.</p>
+          <a class="xp-cta" href="treats.html">Buy Treats</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brandmark" href="home.html">
+          <svg class="paw" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><ellipse cx="7" cy="8" rx="2.1" ry="2.9"/><ellipse cx="12" cy="6.4" rx="2.1" ry="3"/><ellipse cx="17" cy="8" rx="2.1" ry="2.9"/><path d="M12 11c-3 0-5.4 2.2-5.4 4.6 0 1.9 1.7 2.8 3.4 2.4 1.3-.3 2.7-.3 4 0 1.7.4 3.4-.5 3.4-2.4C17.4 13.2 15 11 12 11z"/></svg>
+          <span>Heavenly Paws</span>
+        </a>
+        <p>Three ways to make life sweeter for you and your furry family.</p>
+      </div>
+      <div><h4>Explore</h4><ul><li><a href="index.html">Pet Club</a></li><li><a href="services.html">Services</a></li><li><a href="treats.html">Treats</a></li></ul></div>
+      <div><h4>Community</h4><ul><li><a href="wags.html">WAGS</a></li><li><a href="guardian-angels.html">Guardian Angels</a></li><li><a href="newsletter.html">Newsletter</a></li></ul></div>
+      <div><h4>Connect</h4><ul><li><a href="join-partner.html">Paw Partners</a></li><li><a href="resource-guide.html">Resource Guide</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Heavenly Paws. All Rights Reserved.</span>
+      <span><a href="#">Privacy</a> &nbsp;·&nbsp; <a href="#">Terms</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
