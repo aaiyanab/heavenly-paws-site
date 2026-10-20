@@ -10,7 +10,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Kaushan+Script&family=Great+Vibes&family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
-/* ── Homepage-specific overrides ── */
 .hp-hero {
   background: var(--connector, #0F2F4A);
   color: #fff;
@@ -48,8 +47,6 @@
   margin: 1.4rem auto 0;
   line-height: 1.75;
 }
-
-/* ── Experience cards ── */
 .xp-section {
   background: var(--cream, #F8F4EE);
   padding: clamp(48px,7vw,90px) 20px clamp(56px,8vw,100px);
@@ -127,26 +124,18 @@
   transition: background .2s, transform .15s;
 }
 .xp-cta:hover { transform: scale(1.03); }
-
-/* Club — gold */
 .xp-card--club .xp-card-brand { color: var(--connector, #0F2F4A); }
 .xp-card--club .xp-card-tagline { color: var(--gold, #C69A6B); }
 .xp-card--club .xp-cta { background: var(--gold, #C69A6B); color: #fff; }
 .xp-card--club .xp-cta:hover { background: #b08555; }
-
-/* Services — sage */
 .xp-card--services .xp-card-brand { color: #3d5045; }
 .xp-card--services .xp-card-tagline { color: #6E785D; }
 .xp-card--services .xp-cta { background: #6E785D; color: #fff; }
 .xp-card--services .xp-cta:hover { background: #5a6449; }
-
-/* Treats — coral */
 .xp-card--treats .xp-card-brand { color: #8b2e30; }
 .xp-card--treats .xp-card-tagline { color: #E07173; }
 .xp-card--treats .xp-cta { background: #E07173; color: #fff; }
 .xp-card--treats .xp-cta:hover { background: #c75d5f; }
-
-/* section heading */
 .xp-section .sec-head { text-align: center; }
 .xp-section .sec-head h2 {
   font-family: var(--serif,'Cinzel',serif);
@@ -161,7 +150,6 @@
   margin: 0 auto;
   line-height: 1.65;
 }
-
 @media (max-width: 860px) {
   .xp-grid { grid-template-columns: 1fr 1fr; }
   .xp-card:last-child { grid-column: 1 / -1; max-width: 480px; justify-self: center; }
@@ -173,7 +161,6 @@
 </style>
 </head>
 <body class="theme-club">
-
 <header class="site-head">
   <div class="wrap nav">
     <a class="brandmark" href="home.html" aria-label="Heavenly Paws home">
@@ -193,38 +180,28 @@
     </ul>
   </div>
 </header>
-
 <main>
-
-<!-- ===== HERO ===== -->
 <section class="hp-hero">
   <span class="eyebrow">Welcome to Heavenly Paws</span>
   <h1>Choose Your Heavenly Paws Experience</h1>
   <p class="tagline">Three ways to make life sweeter for you and your furry family.</p>
   <p class="intro-copy">At Heavenly Paws, we believe caring for pets goes beyond the everyday. It's about building connections, providing loving care, and celebrating the special bond we share with our furry companions.</p>
 </section>
-
-<!-- ===== EXPERIENCE CARDS ===== -->
 <section class="xp-section">
   <div class="wrap">
     <div class="sec-head">
       <p>Explore everything Heavenly Paws has to offer — from community to care to celebration.</p>
     </div>
-
     <div class="xp-grid">
-
-      <!-- Pet Club -->
       <div class="xp-card xp-card--club reveal">
         <img class="xp-card-img" src="assets/home_club_logo.png" alt="Madison Pet Club logo">
         <div class="xp-card-body">
           <div class="xp-card-brand">Madison Pet Club</div>
           <span class="xp-card-tagline">Where Pet Lovers Become Community.</span>
           <p>Connect with fellow pet parents, discover pet-friendly experiences, and become part of a community that celebrates the joy of pet ownership. Through local events, educational opportunities, community partnerships, and shared experiences, the Pet Club makes it easier to find your people while creating meaningful memories with your pets.<br><br>From community meetups and dog walks to pet-focused activities and opportunities to support local businesses, there's always something new to discover.<br><br><em>Your pets bring us together. Our community keeps us connected.</em></p>
-         <a class="xp-cta" href="index.html">Join the Pet Club</a>
+          <a class="xp-cta" href="/index">Join the Pet Club</a>
         </div>
       </div>
-
-      <!-- Services -->
       <div class="xp-card xp-card--services reveal">
         <img class="xp-card-img" src="assets/home_services_logo.png" alt="Heavenly Paws Pet Care Services logo">
         <div class="xp-card-body">
@@ -234,8 +211,6 @@
           <a class="xp-cta" href="services.html">Book Your Services</a>
         </div>
       </div>
-
-      <!-- Treats -->
       <div class="xp-card xp-card--treats reveal">
         <img class="xp-card-img" src="assets/home_treats_logo.png" alt="Heavenly Paws Treats logo">
         <div class="xp-card-body">
@@ -245,13 +220,10 @@
           <a class="xp-cta" href="treats.html">Buy Treats</a>
         </div>
       </div>
-
     </div>
   </div>
 </section>
-
 </main>
-
 <footer class="site-foot">
   <div class="wrap">
     <div class="foot-grid">
@@ -272,7 +244,6 @@
     </div>
   </div>
 </footer>
-
 <script src="app.js"></script>
 </body>
 </html>
