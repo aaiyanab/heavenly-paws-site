@@ -1,10 +1,6 @@
 {
-  "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
     { "source": "/", "destination": "/home", "permanent": false }
-  ],
-  "rewrites": [
-    { "source": "/pet-club", "destination": "/index.html" }
   ]
 }
